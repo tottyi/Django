@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Registácia</h1>
+
+<form method="post">
+
+    {% csrf_token %}
+
+    <label for="firstname">Meno</label>
+    <input type="text" class ='form-control' name="firstname" id="firstname">
+    
+    <label for="lastname">Priezvisko</label>
+    <input type="text" class ='form-control' name="lastname" id="lastname">
+
+    <div class='flex flex-row mt-2 mb-4'>
+        <label for="ageold">Vek</label>
+        <input type="number" class ='form-control' name="ageold" id="ageold">
+    </div>
+
+    <input type="submit" class='btn btn-success' id='save' name='save' value="Save">
+
+</form>
+
+{% endblock content %}

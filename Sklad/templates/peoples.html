@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p>Peoples</p>
+
+    <table class='table shadow container'>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age Old</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for i in  key_peoples %}
+                <tr class='table-success'>
+                    <td>{{ i.firstname }}</td>
+                    <td>{{ i.lastname |truncatechars:20 }}</td>
+                    <td>{{ i.ageold |truncatechars:10 }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+{% endblock content %}
